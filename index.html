@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitch word</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <h1>The Effect</h1>
+      
+        <div class="hero-container">
+          <div class="environment"></div>
+          <!-- <h2 class="hero glitch layers" data-text="CIRCUITX"><span>CIRCUITX</span></h2> -->
+          <h2 class="hero glitch layers" data-text="近設計"><span>近設計</span></h2>
+        </div>
+      </section>
+      
+      <section>
+        <h1>Walkthrough</h1>
+        <p>This came out of a 24-hour work sprint to replicate some sophisticated video VFX in to make it more flexible. <a href="https://www.tesla.cn/design-leader">You can see the original here</a></p>
+        <p>There's a lot of pieces that go into an effect like this. What follows is an outline of the animations and VFX concepts, all in pure css :)</p>
+        <p>Core principles:</p>
+        <ol>
+          <li>Keep the text legible most of the time</li>
+          <li>Don't throw too many glitches in per second. Give it space to breathe</li>
+          <li>Whitespace never hurt anyone</li>
+          <li>Blurs & glows lend a feeling of realism in dark environments (queue neon)</li>
+        </ol>
+      </section>
+      
+      <section>
+        <h2>layers</h2>
+        <p>Create muultiple layers to play with. For this example I'll use ::before & ::after elements, but this could just as easily be multiple divs overlapped, or whatever.</p>
+        <h2 class="hero layers" data-text="EXAMPLE">EXAMPLE</h2>
+      </section>
+      
+      <section>
+        <h2>Paths</h2>
+        <p>Build out a set of clip-paths (Eg. I wrote up a <a href="https://codepen.io/mattgrosswork/pen/bGgWGxy">generator util</a> for this project)</p>
+        <p>Example Path:</p>
+        <div class="demo single-path"></div>
+        <p>Over text:</p>
+        <h2 class="hero paths">EXAMPLE</h2>
+      </section>
+      
+      <section>
+        <h2>Movement</h2>
+        <p>Create a stepping movement animation, so that the layers above can appear in different places as the other layers of the animation happen.</p>
+        <p>It's best to make this timing somewhat erratic.</p>
+        <div class="demo movement"></div>
+      </section>
+      
+      <section>
+        <h2>Opacity</h2>
+        <p>Create a similar animation for opacity, so that the layers can appear/disappear. This will get layered with the movement to create the appearance of the layers popping in and out in different places</p>
+        <p>There's an art to getting this transition to work without making the user feel motion sickness. Take some time getting it right</p>
+        <div class="demo opacity"></div>
+      </section>
+      
+      <section>
+        <h2>Font</h2>
+        <p>The next layer is changes to the font directly. These could be any properties, but we'll stick to font-weight and color.</p>
+        <h2 class="hero font">EXAMPLE</h2>
+      </section>
+      
+      <section>
+        <h2>Combined Animation Layers</h2>
+        <p>Note that some of tthe animations have sync'd timing, and some don't.</p>
+        <p>I try to sync the paths & opacity animations, so that it looks like the background layers are really a part of the main text that's glitching off.</p>
+        <p>Then I try to separately sync the color/text/filter other effects, and keep the moevment separate completely. This gives the whole thing the appearance of a lot more effects than are actually happening, because of the different combinations.</p>
+        <h2 class="hero glitch layers" data-text="EXAMPLE">
+          <span>EXAMPLE</span>
+        </h2>
+      </section>
+      
+      <section>
+        <h2>Environment</h2>
+        <p>For good measure, it should live in the right language & context :)</p>
+      
+        <div class="hero-container">
+          <div class="environment"></div>
+          <h2 class="hero glitch layers" data-text="近設計"><span>近設計</span></h2>
+        </div>
+      </section>
+</body>
+</html>
